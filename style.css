@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    /* list-style-type: none; */
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    flex-direction: column;
+}
+
+.action-container{
+    height: 40px;
+}
+
+li{
+    cursor: pointer;
+}
+
+.completed{
+    text-decoration: line-through;
+}
