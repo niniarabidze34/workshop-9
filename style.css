@@ -1,25 +1,64 @@
 *{
     margin: 0;
-    /* list-style-type: none; */
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+
 }
 
-
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    flex-direction: column;
+    background-color: #d3c2c2;
 }
 
 .action-container{
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    /* flex-direction: column; */
+    gap: 5px;
 }
-
-li{
+button, input{
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
-
+input{
+    cursor: auto;
+}
+li{
+    cursor: pointer;
+    margin-bottom: 5px;
+}
 .completed{
     text-decoration: line-through;
 }
+#todo-container{
+    text-align: center;
+}
+
+.second-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+h2{
+   align-self: center;
+}
+.doneList{
+    display: none;
+}
+.new{
+    width: 500px;
+    height: 300px;
+    background-color: #af9797;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+

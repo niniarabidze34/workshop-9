@@ -6,8 +6,10 @@ const clearBtn = document.querySelector('#clear');
 const clearDoneBtn = document.getElementById('clear-done');
 const save = document.getElementById('save');
 const ul = document.getElementById('todo-container');
+const doneList = document.getElementById('doneList');
+const doneUl = document.getElementsByClassName("done-container")
 
-const doneContainer = document.querySelector('.class-container')
+
 
 const todoItems = JSON.parse(localStorage.getItem('todos')) || [];
 
@@ -23,7 +25,7 @@ function ToDOItem(description, isComplete,id){
 
 function addToDoItem(listItem = ''){
     const li = document.createElement('li');
-    li.innerText = input.value;
+    li.innerText = listItem ? listItem.description : input.value;
     ul.appendChild(li)
     let description = listItem ? listItem.description : input.value;
     let id = listItem ? listItem.id : Date.now()
@@ -69,18 +71,34 @@ save.addEventListener('click', () => {
 
 function handleClearDone(){
     clearDoneBtn.addEventListener('click',() => {
-        const undoneItems = todoItems.filter((el) => el.isComplete == false);
-        console.log(undoneItems)
+        // const doneItems = todoItems.filter((el) => el.isComplete == true);
+        // console.log(doneItems)
+        // const one = doneItems.forEach((el) => {
+        //     return `<li> ${el} </li>`
+        // })
+        // console.log(one)
+        // doneUl.appendChild()
+        
+        //---
+        for(let i = 0; i < todoItems.length; i++){
+            if(todoItems[i].isComplete == true){
+                todoItems.splice(i,1)
+            }
+            if(todoItems[todoItems.length-1].isComplete == true){
+                todoItems.pop()
+            }
+        }
+        // console.log(todoItems)
         //----
         
-        const doneItems = document.querySelectorAll('.completed');
-        doneItems.forEach((el) => el.outerHTML='')
-        console.log(doneItems)
+        const doneElemens = document.querySelectorAll('.completed');
+        doneElemens.forEach((el) => el.outerHTML='')
 
         //----
         localStorage.removeItem('todos')
-        localStorage.setItem('todos', JSON.stringify(undoneItems))
-        
+        localStorage.setItem('todos', JSON.stringify(todoItems))
+
+        doneList.classList.add('new')
     })
 }
 

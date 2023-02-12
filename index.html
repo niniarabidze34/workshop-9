@@ -10,15 +10,24 @@
 </head>
 <body>
     <div class="action-container">
-        <input type="text" id="todo-input">
+        <input type="text" id="todo-input" placeholder="შეიყვანე ტექსტი">
         <button id="add">add</button>
         <button id="clear">clear all</button>
         <button id="clear-done">clear done</button>
         <button id="save">save</button>
     </div>
-    <ul id="todo-container"></ul>
-    <!-- <h2>Done list</h2>
-    <ul class="done-container"></ul> -->
+    <div class="second-container">
+        <div class="new">
+            <h2>To Do List</h2>
+            <ul id="todo-container"></ul> 
+        </div>
+
+        <div id="doneList" class="doneList">
+            <h2>Done list</h2>
+            <ul class="done-container"></ul>
+        </div>
+    </div>
+    
     
 </body>
 </html>
